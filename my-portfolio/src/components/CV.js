@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const About = () => {
+const CV = () => {
 
   const [mydata, setMydata] = useState("");
 
@@ -26,6 +26,7 @@ const About = () => {
           }
         `}
       </style>
+
       {mydata === "animation" ? (
         <section style={{ fontSize: "2vw", margin: "0px", padding: "5vw" }} className="about">
           <h2 style={{ color: "blue", fontSize: "3em",margin:"2vw 0vw" }}>---------------About Me---------------</h2>
@@ -81,4 +82,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default CV;
