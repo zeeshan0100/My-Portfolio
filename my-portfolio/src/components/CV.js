@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../assets/css/CV.css"
 
 const CV = () => {
   const [mydata, setMydata] = useState("");
@@ -26,8 +27,8 @@ const CV = () => {
       </style>
 
       {mydata === "animation" ? (
-        <section style={{ fontSize: "2vw", margin: "0px", padding: "5vw" }} className="about">
-          <h2 style={{ color: "blue", fontSize: "3em", margin: "2vw 0vw" }}>---------------About Me---------------</h2>
+        <section style={{ fontSize: "2vw", margin: "0px", padding: "5vw" }} className="cv-container">
+          <h2 className='cv-BoldText'>---------------About Me---------------</h2>
           <hr />
           <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Full-Name:</strong> Zeeshan Ahmad Kamran</p>
           <hr />
