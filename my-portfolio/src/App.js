@@ -13,7 +13,7 @@ const App = () => (
     <Routes>
       <Route path="*" element={<PageNotFound />} />
       <Route path="/My-Portfolio" element={<CV />} />
-      <Route path="/My-Portfolio/contact" element={<Contact />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
     <Footer />
   </div>

@@ -22,7 +22,7 @@ const Header = () => (
         </li>
         <li style={{ fontSize: '2vw' }}>
           <NavLink
-            to="/My-Portfolio/contact"
+            to="/contact"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'none',
               color: isActive ? 'blue' : 'grey',
