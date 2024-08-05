@@ -1,28 +1,39 @@
 {
-  "homepage": "https://github.com/zeeshan0100/My-Portfolio.git",
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "ajv": "^8.17.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "overrides": {
-    "nth-check": "2.1.1",
-    "postcss": "8.4.40"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://zeeshan0100.github.io/My-Portfolio",
+  "overrides": {
+    "nth-check": "2.1.1",
+    "postcss": "8.4.40",
+    "ansi-html": "0.0.9",
+    "braces": "3.0.3",
+    "browserslist": "4.23.3",
+    "ejs": "3.1.10",
+    "immer": "10.1.1",
+    "ip": "1.1.9",
+    "loader-utils": "2.0.4",
+    "lodash.template": "4.4.0",
+    "minimatch": "3.1.2",
+    "node-forge": "1.3.1",
+    "semver": "6.3.1",
+    "shell-quote": "1.8.1",
+    "webpack-dev-middleware": "5.3.4"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +52,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "cross-env": "^7.0.3",
+    "gh-pages": "^6.1.1"
   }
 }
