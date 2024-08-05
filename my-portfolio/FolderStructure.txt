@@ -1,0 +1,18 @@
+portfolio-site/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── components/
+│   │   ├── Header.module.css
+│   │   ├── Header.js
+│   │   ├── About.module.css
+│   │   ├── About.js
+│   │   ├── Projects.module.css
+│   │   ├── Projects.js
+│   │   ├── Contact.module.css
+│   │   ├── Contact.js
+│   │   ├── Footer.module.css
+│   │   ├── Footer.js
+│   ├── App.js
+│   ├── index.js
+│   ├── styles.css
