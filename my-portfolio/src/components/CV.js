@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
 const CV = () => {
-
   const [mydata, setMydata] = useState("");
 
-  // Handler function to update state
   const name = () => {
     setMydata("animation");
   };
@@ -29,25 +27,25 @@ const CV = () => {
 
       {mydata === "animation" ? (
         <section style={{ fontSize: "2vw", margin: "0px", padding: "5vw" }} className="about">
-          <h2 style={{ color: "blue", fontSize: "3em",margin:"2vw 0vw" }}>---------------About Me---------------</h2>
+          <h2 style={{ color: "blue", fontSize: "3em", margin: "2vw 0vw" }}>---------------About Me---------------</h2>
           <hr />
           <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Full-Name:</strong> Zeeshan Ahmad Kamran</p>
           <hr />
-          <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>City:</strong> Chenab Nagar</p>
+          <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>City:</strong> Faisalabad</p>
           <hr />
           <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Location:</strong> Pakistan</p>
           <hr />
-          <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Address:</strong> Darul Fatooh Sharki Street No 6 House No 253-C</p>
+          <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Address:</strong> C/O Hafiz Yahya Khan Street No: 9 Gulshane Raheem Colony</p>
           <hr />
           <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Experience:</strong> Not yet, waiting for I.C.S degree</p>
           <hr />
           <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Skills:</strong> HTML, CSS, JavaScript, React.js, Node.js, Bootstrap, GitHub</p>
           <hr />
           <p style={{ margin: "3vw 0px 3vw 2vw", fontSize: "2.5vw" }}><strong style={{ color: "blue", fontSize: "1.5em", }}>Summary:</strong> I am a skilled full-stack developer who can easily create fully responsive React front-end + backend websites. My expertise lies in front-end development, but I am also knowledgeable in backend development. I am eager to help grow your company by delivering my best work and engaging with your team. Hire me, I am ready and waiting. Thank you!</p>
-          <hr style={{ boxShadow: '0px 4px 20px 10px blue'}} />
+          <hr style={{ boxShadow: '0px 4px 0px 4px blue' }} />
         </section>
       ) : (
-        <div style={{fontSize: "1vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', }}>
+        <div style={{ fontSize: "1vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', }}>
           <button
             onClick={name}
             style={{
