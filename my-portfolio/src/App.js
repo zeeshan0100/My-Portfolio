@@ -12,8 +12,8 @@ const App = () => (
     <Header />
     <Routes>
       <Route path="*" element={<PageNotFound />} />
-      <Route path="/" element={<CV />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/My-Portfolio" element={<CV />} />
+      <Route path="/My-Portfolio/contact" element={<Contact />} />
     </Routes>
     <Footer />
   </div>

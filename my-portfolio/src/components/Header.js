@@ -8,7 +8,7 @@ const Header = () => (
       <ul style={{ display: 'flex', columnGap: '4vw', alignItems: 'center', justifyContent: 'center', listStyleType: 'none' }}>
         <li style={{ fontSize: '2vw' }}>
           <NavLink
-            to="/"
+            to="/My-Portfolio"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'none',
               color: isActive ? 'blue' : 'grey',
@@ -22,7 +22,7 @@ const Header = () => (
         </li>
         <li style={{ fontSize: '2vw' }}>
           <NavLink
-            to="/contact"
+            to="/My-Portfolio/contact"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'none',
               color: isActive ? 'blue' : 'grey',
