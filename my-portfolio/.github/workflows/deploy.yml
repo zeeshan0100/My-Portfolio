@@ -1,31 +1,49 @@
-name: Deploy to GitHub Pages
+name: Deploy to gh-pages
 
 on:
   push:
     branches:
-      - master  # or main, depending on your default branch
+      - master
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # specify the Node.js version
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Build project
-        run: npm run build
+    - name: Build project
+      run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+    - name: Deploy to gh-pages branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Ensure gh-pages branch exists
+        git fetch origin gh-pages:gh-pages
+        # Create worktree for gh-pages branch
+        git worktree add gh-pages origin/gh-pages
+
+        # Sync the build output with the gh-pages branch without the build folder
+        rsync -av --delete build/ gh-pages/
+
+        # Commit and push changes
+        cd gh-pages
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add --all
+        git commit -m "Deploy to gh-pages branch"
+        git push origin gh-pages --force
+
+    - name: Clean up
+      run: |
+        git worktree remove gh-pages
