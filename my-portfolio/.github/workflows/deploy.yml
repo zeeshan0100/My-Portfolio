@@ -3,41 +3,46 @@ name: Deploy to gh-pages
 on:
   push:
     branches:
-      - master
+      - master  # Trigger the workflow on push to the master branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Build project
-        run: npm run build
+    - name: Build project
+      run: npm run build
 
-      - name: Deploy to gh-pages branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git fetch origin gh-pages:gh-pages
-          git worktree add gh-pages origin/gh-pages
-          rsync -av --delete build/ gh-pages/
-          cd gh-pages
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add --all
-          git commit -m "Deploy to gh-pages branch"
-          git push origin gh-pages --force
+    - name: Deploy to gh-pages branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Fetch gh-pages branch and create worktree
+        git fetch origin gh-pages:gh-pages
+        git worktree add gh-pages origin/gh-pages
+        
+        # Sync build files to gh-pages branch
+        rsync -av --delete build/ gh-pages/
 
-      - name: Clean up
-        run: |
-          git worktree remove gh-pages
+        # Commit and push changes
+        cd gh-pages
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add --all
+        git commit -m "Deploy to gh-pages branch" || echo "No changes to commit"
+        git push origin gh-pages --force
+        
+        # Clean up worktree
+        cd ..
+        git worktree remove gh-pages
