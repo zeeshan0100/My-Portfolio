@@ -33,7 +33,8 @@ jobs:
         git worktree add gh-pages origin/gh-pages
         
         # Sync build files to gh-pages branch
-        rsync -av --delete build/ gh-pages/
+        # Sync only the build directory to gh-pages branch, excluding node_modules and other unwanted files
+        rsync -av --delete --exclude-from='.gitignore' build/ gh-pages/
 
         # Commit and push changes
         cd gh-pages
