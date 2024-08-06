@@ -29,7 +29,7 @@ const Contact = () => {
       </style>
       {mydata === "animation" ? (
     <section className="contact-container" style={{ padding:"5vw", fontSize: '2vw' }}>
-      <h2 className='contact-BoldText' >----------------Contact----------------</h2>
+      <h2 className='contact-BoldText' >----Contact----</h2>
       <p style={{ fontSize: '1em', color: "blue",margin:"3vw 0px 3vw 2vw" }}>If you'd like to get in touch, please reach out at my email or phone number.</p>
       <hr/>
       <h1 style={{ display: "inline-block", fontSize: '2em', color: "blue",margin:"3vw 0px 3vw 2vw" }}>Email:</h1>
