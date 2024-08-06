@@ -10,7 +10,7 @@ import './App.css';
 const App = () => (
   <div className="app">
     <Header />
-    <Routes>
+    <Routes basename="/My-Portfolio" >
       <Route path="*" element={<PageNotFound />} />
       <Route path="/My-Portfolio" element={<CV />} />
       <Route path="/contact" element={<Contact />} />
