@@ -19,7 +19,7 @@ const PageNotFound = () => {
       <p style={{ fontSize: '1.2rem', margin: '10px 0' }}>
         The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
       </p>
-      <Link to="/My-Portfolio" style={{
+      <Link to="/" style={{
         marginTop: '20px',
         padding: '10px 20px',
         fontSize: '1rem',
